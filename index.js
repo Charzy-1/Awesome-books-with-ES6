@@ -17,8 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hour: 'numeric',
     minute: 'numeric',
     second: 'numeric',
-    hour12: true
+    hour12: true,
   });
   dateElement.textContent = `${now}`;
 });
-
