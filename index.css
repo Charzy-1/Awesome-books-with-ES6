@@ -84,14 +84,7 @@
   }
   
   .container h1 {
-    margin-bottom: 40px;
-  }
-  
-  .indexPage-containerh3 {
-    font-family: "Margarine", sans-serif;
-    margin: 5rem 5rem 8rem;
-    align-self: flex-end;
-    font-size: 15px;
+    margin-top: 15rem;
   }
   
   .book-list {
@@ -154,6 +147,14 @@
     border: 3px solid black;
     align-self: flex-end;
     cursor: pointer;
+  }
+
+  #current-date {
+    font-family: "Margarine", sans-serif;
+    text-align: right;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 5rem;
   }
   
   footer {
@@ -260,10 +261,6 @@
       margin: 10px 0;
       border-radius: 0;
       width: 80vw;
-    }
-  
-    .indexPage-containerh3 {
-      margin: 5rem 0 8rem;
     }
   
     footer h2 {
