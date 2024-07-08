@@ -12,5 +12,15 @@
   "dependencies": {
     "luxon": "^3.4.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "hint": "^7.1.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Charzy-1/Awesome-books-with-ES6.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Charzy-1/Awesome-books-with-ES6/issues"
+  },
+  "homepage": "https://github.com/Charzy-1/Awesome-books-with-ES6#readme"
 }
