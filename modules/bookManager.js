@@ -1,11 +1,14 @@
-import { Book } from './book.js';
+import Book from './book.js';
 
-export class BookManager {
+class BookManager {
   constructor() {
     this.books = JSON.parse(localStorage.getItem('books')) || [];
     this.bookListElement = document.getElementById('book-list');
     this.dialogueBox = document.getElementById('dialogue-box');
-    if (this.bookListElement) this.render();
+    if (this.bookListElement) {
+      this.bookListElement.addEventListener('click', this.handleRemoveBook);
+      this.render();
+    }
   }
 
   addBook = (book) => {
@@ -20,6 +23,12 @@ export class BookManager {
     this.render();
   };
 
+  handleRemoveBook = (event) => {
+    if (event.target.tagName === 'BUTTON' && event.target.dataset.index) {
+      this.removeBook(parseInt(event.target.dataset.index, 10));
+    }
+  };
+
   saveBooks = () => {
     localStorage.setItem('books', JSON.stringify(this.books));
   };
@@ -32,6 +41,7 @@ export class BookManager {
       this.dialogueBox.style.display = 'block';
     } else {
       this.dialogueBox.style.display = 'none';
+
       const outerContainer = document.createElement('div');
       outerContainer.className = 'outer-container';
 
@@ -41,8 +51,9 @@ export class BookManager {
         bookItem.style.backgroundColor = index % 2 === 0 ? 'rgb(203 198 188)' : 'white';
         bookItem.innerHTML = `
           <span>${book.title} by: ${book.author}</span>
-          <button onclick="bookManager.removeBook(${index})">Remove</button>
+          <button data-index="${index}">Remove</button>
         `;
+
         outerContainer.appendChild(bookItem);
       });
 
@@ -50,3 +61,5 @@ export class BookManager {
     }
   };
 }
+
+export default BookManager;

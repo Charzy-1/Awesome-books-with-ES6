@@ -1,24 +1,10 @@
-import { BookManager } from './modules/bookManager.js';
-import { setupNavigation } from './modules/navigation.js';
-import { setupBookForm } from './modules/domElements.js';
+import './modules/domManipulation.js';
+import BookManager from './modules/bookManager.js';
+import './modules/formHandler.js';
+import displayDateTime from './modules/dateTime.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const bookManager = new BookManager();
-  setupNavigation();
-  setupBookForm(bookManager);
+const bookManager = new BookManager();
+window.bookManager = bookManager; // Make bookManager globally accessible
 
-  // Display current date using JavaScript Date object
-  const dateElement = document.getElementById('current-date');
-  const now = new Date().toLocaleString('en-US', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-    hour12: true
-  });
-  dateElement.textContent = `${now}`;
-});
-
+// Initialize the date and time display
+displayDateTime();
