@@ -154,7 +154,8 @@
     text-align: right;
     font-size: 15px;
     font-weight: bold;
-    margin-right: 5rem;
+    margin-right:5rem;
+ 
   }
   
   footer {
@@ -177,6 +178,11 @@
   .container-items ul {
     margin: 20px 0;
   }
+
+  .container-items a {
+    color: black;
+  }
+  
   
   .container-items li {
     list-style-type: disc;
@@ -237,6 +243,11 @@
   
     a {
       color: white;
+    }
+
+    #current-date {
+      margin-right: 4rem;
+   
     }
   
     .navItems h1 {
